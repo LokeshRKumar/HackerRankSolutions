@@ -11,6 +11,7 @@ public class Solution {
     // Complete the minimumBribes function below.
     static void minimumBribes(int[] q) {
         int bribes=0;
+        // Creating array of initial positions
         int[] position =new int[q.length];
         for(int i=0;i<q.length;i++){
             position[i]=i+1;
@@ -18,6 +19,7 @@ public class Solution {
         for(int i=0;i<q.length;i++){
             int bribe=0;
             int index=0;
+            //finding the new position after bribing
             if(q[i]!=position[i]){
                 for(int x=i+1;x<q.length;x++){
                         if(position[x]==q[i]){
@@ -27,6 +29,7 @@ public class Solution {
                         
                     }
             }
+            //Bribing
             while(q[i]!=position[i]){
                  position[index-bribe]=position[index-bribe-1];
                  position[index-bribe-1]=q[i];
